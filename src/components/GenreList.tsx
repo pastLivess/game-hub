@@ -1,7 +1,7 @@
 import useGenres from '../hooks/useGenres'
 
 export default function GenreList(): JSX.Element {
-  const { genres } = useGenres()
+  const { data: genres } = useGenres()
   console.log(genres)
 
   return (
