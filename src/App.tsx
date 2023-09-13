@@ -26,7 +26,10 @@ export default function App(): JSX.Element {
         </GridItem>
         <Show above='lg'>
           <GridItem area='aside' paddingX={5}>
-            <GenreList onSelectGenre={handlerSelectGenre} />
+            <GenreList
+              selectedGenre={selectedGenre}
+              onSelectGenre={handlerSelectGenre}
+            />
           </GridItem>
         </Show>
         <GridItem area='main'>
