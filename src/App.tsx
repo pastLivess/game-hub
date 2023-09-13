@@ -12,6 +12,7 @@ export interface GameQuery {
   genre: Genres | null
   platform: Platform | null
   sortOrder: string
+  searchText: string
 }
 
 export default function App(): JSX.Element {
@@ -25,6 +26,9 @@ export default function App(): JSX.Element {
   function handlerSelectSortOrder(sortOrder: string) {
     setGameQuery({ ...gameQuery, sortOrder })
   }
+  function handlerSearch(searchText: string) {
+    setGameQuery({ ...gameQuery, searchText })
+  }
   return (
     <div>
       <Grid
@@ -37,7 +41,7 @@ export default function App(): JSX.Element {
           lg: '200px 1fr',
         }}>
         <GridItem area='nav'>
-          <NavBar />
+          <NavBar onSearch={handlerSearch} />
         </GridItem>
         <Show above='lg'>
           <GridItem area='aside' paddingX={5}>
