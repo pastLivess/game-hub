@@ -3,6 +3,7 @@ import type { Games } from '../hooks/useGames'
 import PlatformIconList from './PlatformIconList'
 import CiticScore from './CiticScore'
 import GameCardContainer from './GameCardContainer'
+import Emoji from './Emoji'
 
 interface Props {
   game: Games
@@ -20,7 +21,10 @@ export default function GameCard({ game }: Props): JSX.Element {
             />
             <CiticScore score={game.metacritic} />
           </HStack>
-          <Heading fontSize='2xl'>{game.name}</Heading>
+          <Heading fontSize='2xl'>
+            {game.name}
+            <Emoji rating={game.rating_top} />
+          </Heading>
         </CardBody>
       </Card>
     </GameCardContainer>
