@@ -3,7 +3,7 @@ import APIClient, { FetchResponse } from '../services/api-client'
 
 import ms from 'ms'
 import useGameQueryStore from '../store'
-import { Games } from '../types/Games'
+import Games from '../types/Games'
 const apiClient = new APIClient<Games>(`/games`)
 function useGames() {
   const gameQuery = useGameQueryStore((s) => s.gameQuery)

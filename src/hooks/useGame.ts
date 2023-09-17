@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import APIClient from '../services/api-client'
-import { Games } from '../types/Games'
+import Games from '../types/Games'
 
 const apiClient = new APIClient<Games>('/games')
 export default function useGame(slug: string) {
